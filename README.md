@@ -4,8 +4,11 @@ emacs configuration of gautamr
 
 * Screenshot
 
-![flyspell](./screenshot/30_flyspell.png)
+![alt text](./screenshot/30_flyspell.png "Flyspell")
+Flyspell
 
-![R programming - popup API doc](./screenshot/54_r_popup_doc.png)
+![alt text](./screenshot/54_r_popup_doc.png "R programming - popup API doc")
+R programming - popup API doc
 
-![R programming - dataframe view](./screenshot/54_r_view_data_frame.png)
+![alt text](./screenshot/54_r_view_data_frame.png "R programming - dataframe view")
+R programming - dataframe view
