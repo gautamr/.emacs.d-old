@@ -1,7 +1,7 @@
-;;; init-40-coding-gen.el --- Code for general programming
-
+;;; init-50-coding-common.el --- Code for general programming
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
 ;; Keywords: configuration, company, magit, git, flycheck
@@ -9,10 +9,10 @@
 
 ;;; Commentary:
 ;; General tools for programming across languages.  This consists of:
-;;   Company :: used for code completion
-;;   Projectile :: used for searching projects
-;;   Magit :: used for interfacing with git/github
-;;   Flycheck :: code syntax/convention checking
+;; Company :: used for code completion
+;; Projectile :: used for searching projects
+;; Magit :: used for interfacing with git/github
+;; Flycheck :: code syntax/convention checking
 
 ;;; Code:
 
@@ -47,11 +47,20 @@
   (company-quickhelp-mode 1))
   
 ;; Install paredit, enable in elisp and Clojure modes
-(use-package paredit
+;;(use-package paredit
+;;  :ensure t
+;;  :config
+;;  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+;;  (add-hook 'clojure-mode-hook #'enable-paredit-mode))
+
+;; lets try smartparens instead of paredit
+;; https://github.com/jabranham/emacs-for-social-science/blob/master/init-emacs.org
+(use-package smartparens
   :ensure t
-  :config
-  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
-  (add-hook 'clojure-mode-hook #'enable-paredit-mode)) 
+  :init
+  (require 'smartparens-config)
+  (smartparens-global-mode)
+  (show-smartparens-global-mode))  
 
 (use-package flycheck
   :ensure t

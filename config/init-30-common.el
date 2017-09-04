@@ -1,22 +1,20 @@
-;;; init-20-common.el --- Customize navigation of emacs
-
+;;; init-30-common.el --- Customize emacs that is common for all modes
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
-;; Keywords: configuration, navigation, avy
+;; Keywords: configuration, spell
 ;; License: GNU General Public License (see init.el for details)
 
 ;;; Commentary:
-;; Navigation configuration: avy
-
-;;; Code:
-
+;; Common utils for all modes: which-key, flyspell
 ;; https://github.com/manugoyal/.emacs.d
 ;; https://github.com/d12frosted/flyspell-correct
-
 ;; http://aspell.net/win32/
 ;; https://stackoverflow.com/questions/17126951/emacs-cannot-find-flyspell-ispell
+
+;;; Code
 
 (use-package which-key
   :ensure t
@@ -31,6 +29,7 @@
     (add-hook 'prog-mode-hook 'flyspell-prog-mode)
     (add-hook 'text-mode-hook 'flyspell-mode)
 	(add-hook 'markdown-mode-hook 'flyspell-mode)
+	(add-hook 'ess-mode-hook 'flyspell-prog-mode)
     )
   ;;:config
   ;; Sets flyspell correction to use two-finger mouse click

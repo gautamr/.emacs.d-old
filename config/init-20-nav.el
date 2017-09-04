@@ -1,7 +1,7 @@
-;;; init-11-nav.el --- Customize navigation of emacs
-
+;;; init-20-nav.el --- Customize navigation of emacs
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
 ;; Keywords: configuration, navigation, avy

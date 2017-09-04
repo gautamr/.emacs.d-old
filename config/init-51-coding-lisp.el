@@ -1,7 +1,7 @@
-;;; init-42-coding-lisp.el --- Code for Clojure programming
-
+;;; init-51-coding-lisp.el --- Code for LISP programming (best programming language ever)
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
 ;; Keywords: configuration, lisp

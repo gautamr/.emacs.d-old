@@ -1,7 +1,7 @@
 ;;; init-10-face.el --- Customize the look and feel of emacs
-
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
 ;; Keywords: configuration, face, zenburn, Monaco font

@@ -1,7 +1,7 @@
-;;; init-41-coding-clojure.el --- Code for Clojure programming
-
+;;; init-52-coding-clojure.el --- Code for Clojure programming
+;;
 ;; Copyright (C) 2017 Gautam Roy
-
+;;
 ;; Author: Gautam Roy
 ;; URL: https://github.com/gautamr/.emacs.d
 ;; Keywords: configuration, clj-refactor, cider

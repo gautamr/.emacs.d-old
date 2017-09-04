@@ -1,6 +1,5 @@
 /*.*~
 /config/*.*~
-/*.el~
 /*.html
 /.bookmarks.el
 /.cask
@@ -11,6 +10,8 @@
 /.smex-items
 /.sqli_history
 /.python-environments
+.last-package-update-day
+/auto-save-list/
 /README.el
 /README.html
 /elpa
