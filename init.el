@@ -45,6 +45,12 @@
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (require 'package)
 
 (setq package-enable-at-startup nil)
@@ -72,11 +78,12 @@
   (package-install 'use-package))
   
 ;; Enable use-package
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
 (setq use-package-verbose t)
 
-;;(require 'diminish)  ;; if you use :diminish
-;;(require 'bind-key)  ;; if you use any :bind variant
+(require 'diminish)  ;; if you use :diminish
+(require 'bind-key)  ;; if you use any :bind variant
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
@@ -103,6 +110,10 @@
 
 (load-file "~/.emacs.d/config/init-52-coding-clojure.el")
 
-(load-file "~/.emacs.d/config/init-53-coding-python.el")
+;;(load-file "~/.emacs.d/config/init-53-coding-python.el")
 
-(load-file "~/.emacs.d/config/init-54-coding-ess.el")
+;;(load-file "~/.emacs.d/config/init-54-coding-ess.el")
+
+;;(load-file "~/.emacs.d/config/init-55-coding-haskell.el")
+
+;;(load-file "~/.emacs.d/config/init-56-coding-scala.el")

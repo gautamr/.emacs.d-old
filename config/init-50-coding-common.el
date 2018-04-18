@@ -36,6 +36,7 @@
 ;; Install code completion and enable it globally
 (use-package company
   :ensure t
+  :diminish " ☭"
   :config
   (global-company-mode))
 
@@ -66,6 +67,6 @@
   :ensure t
   :init (global-flycheck-mode))
   
-(use-package csv-mode
-  :ensure t
-  :pin "gnu")  
+;;(use-package csv-mode
+;;  :ensure t
+;;  :pin "gnu")  
