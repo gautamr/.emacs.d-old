@@ -28,6 +28,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code inspired by:
+;; https://github.com/sriramkswamy/dotemacs
 ;; https://github.com/bbatsov/emacs.d
 ;; https://github.com/gjstein/emacs.d/blob/master/init.el
 ;; http://stackoverflow.com/a/10093312/3672986
@@ -42,14 +43,17 @@
 (setq user-full-name "Gautam Roy")
 (setq user-mail-address "gautam.2005@gmail.com")
 
+;; increase the threshold for garbage collection - 100 MB
+(setq gc-cons-threshold (* 500 1024 1024))
+;; 1 MB restore
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 1 1024 1024))))
+
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
 ;; store all backup and autosave files in the tmp dir
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 (require 'package)
 
@@ -85,6 +89,11 @@
 (require 'diminish)  ;; if you use :diminish
 (require 'bind-key)  ;; if you use any :bind variant
 
+;; Keep the mode-line clean
+(use-package diminish
+  :ensure t
+  :defer t)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
@@ -97,18 +106,30 @@
          auto-package-update-interval 4)
    (auto-package-update-maybe))
 
+;; common configuration
+(add-to-list 'load-path (expand-file-name "comm" user-emacs-directory))
+
+;; language specific setup
+(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
+
+(require 'gr-lnf)
+(require 'gr-comm)
+
+(require 'gr-lang-comm)
+(require 'gr-clojure)
+
 ;; === Face Customization ===
-(load-file "~/.emacs.d/config/init-10-face.el")
+;;(load-file "~/.emacs.d/config/init-10-face.el")
 
 ;;(load-file "~/.emacs.d/config/init-11-nav.el")
 
-(load-file "~/.emacs.d/config/init-30-common.el")
+;;(load-file "~/.emacs.d/config/init-30-common.el")
 
-(load-file "~/.emacs.d/config/init-50-coding-common.el")
+;;(load-file "~/.emacs.d/config/init-50-coding-common.el")
 
 ;;(load-file "~/.emacs.d/config/init-51-coding-lisp.el")
 
-(load-file "~/.emacs.d/config/init-52-coding-clojure.el")
+;;(load-file "~/.emacs.d/config/init-52-coding-clojure.el")
 
 ;;(load-file "~/.emacs.d/config/init-53-coding-python.el")
 
@@ -117,3 +138,5 @@
 ;;(load-file "~/.emacs.d/config/init-55-coding-haskell.el")
 
 ;;(load-file "~/.emacs.d/config/init-56-coding-scala.el")
+
+(provide 'init)
