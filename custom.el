@@ -8,7 +8,7 @@
     ("bfdcbf0d33f3376a956707e746d10f3ef2d8d9caa1c214361c9c08f00a1c8409" default)))
  '(package-selected-packages
    (quote
-    (ensime hindent intero flycheck-haskell auto-package-update ess smartparens csv-mode which-key ein elpy company-jedi jedi clj-refactor clojure-mode flycheck paredit company-quickhelp company magit rainbow-mode rainbow-delimiters flyspell-popup flyspell-correct-popup powerline use-package))))
+    (cider clojure-mode flycheck smartparens company-quickhelp company magit rainbow-mode rainbow-delimiters flyspell-popup flyspell-correct-popup which-key powerline use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -67,9 +67,10 @@
   :ensure t
   :init (global-flycheck-mode))
   
-;;(use-package csv-mode
+;;(use-package CS-mode
 ;;  :ensure t
 ;;  :pin "gnu")
 
 ;; provide common configuration for all languages
 (provide 'gr-lang-comm)
+;;; gr-lang-comm.el ends here

@@ -51,6 +51,11 @@
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
+;; exec-path might not contain the local path variable, so adding that
+;; https://stackoverflow.com/questions/13671839/cant-launch-lein-repl-in-emacs
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;; store all backup and autosave files in the tmp dir
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
